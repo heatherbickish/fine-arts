@@ -8,7 +8,8 @@ class ArtWorksService {
     const response = await api.get('api/artworks')
     const artworks = response.data.artworks.map(artPojo => new Artwork(artPojo))
     AppState.artworks = artworks
-    logger.log(artworks)
+    AppState.currentPage = response.data.page
+    AppState.totalPages = response.data.pages
   }
 
 
