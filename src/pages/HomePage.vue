@@ -1,4 +1,5 @@
 <script setup>
+import { AppState } from "@/AppState";
 import { artWorksService } from "@/services/ArtWorksService";
 import { logger } from "@/utils/Logger";
 import Pop from "@/utils/Pop";
@@ -10,6 +11,7 @@ onMounted(()=> {
   getArtWorks()
 })
 
+const artworks = AppState.artworks
 
 async function getArtWorks(){
   try {
@@ -24,7 +26,20 @@ async function getArtWorks(){
 </script>
 
 <template>
-  <p>hey hey</p>
+<div class="container">
+  <section class="row">
+    <div class="col">
+      
+      <h4>CodeWorks Institute Of Art</h4>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col">
+      {{ artworks }}
+    </div>
+  </section>
+
+</div>
 </template>
 
 <style scoped lang="scss"></style>
