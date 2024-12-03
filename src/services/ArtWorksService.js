@@ -12,6 +12,14 @@ class ArtWorksService {
     AppState.totalPages = response.data.pages
   }
 
-
+  async changePage(pageNumber) {
+    const response = await api.get(`api/artworks?page=${pageNumber}`)
+    const artworks = response.data.artworks.map(artPojo => new Artwork(artPojo))
+    AppState.artworks = artworks
+    AppState.currentPage = response.data.page
+    AppState.totalPages = response.data.pages
+  }
 }
+
+
 export const artWorksService = new ArtWorksService()
