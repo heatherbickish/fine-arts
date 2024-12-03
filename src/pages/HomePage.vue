@@ -43,24 +43,27 @@ catch (error){
       <div class="m-4">
         <h4><em>CodeWorks Institute Of Art</em></h4>
         <div class="d-flex align-items-center gap-2 m-3">
-          <button @click="changePage(currentPage - 1)" class="btn btn-outline-warning" type="button" title="`Go to page ${currentPage - 1}`" :disabled="currentPage == 1"><em>Previous</em></button>
+          <button @click="changePage(currentPage - 1)" class="btn btn-outline-warning" type="button" :disabled="currentPage == 1"><em>Previous</em></button>
           <span>Page <b>{{ currentPage }}</b> of <b>{{ totalPages }}</b></span>
           <button @click="changePage(currentPage + 1)" class="btn btn-outline-warning"><em>Next</em></button>
-
         </div>
       </div>
     </div>
   </section>
   <section class="row">
     <div v-for="artwork in artworks" :key="artwork.id" class="col-md-3">
-      <img :src="artwork.imgUrl" alt="" class="img-fluid m-3 rounded shadow">
-      <div class="text-center">
-        
+      <div class="card-img">
+        <img :src="artwork.imgUrl" alt="" class="img-fluid m-3 rounded shadow">
+        <div class="text-center">
+      </div>
       </div>
     </div>
   </section>
-
 </div>
+
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+
+</style>
