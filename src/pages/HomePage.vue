@@ -43,7 +43,7 @@ catch (error){
       <div class="m-4">
         <h4><em>CodeWorks Institute Of Art</em></h4>
         <div class="d-flex align-items-center gap-2 m-3">
-          <button @click="changePage(currentPage - 1)" class="btn btn-outline-warning"><em>Previous</em></button>
+          <button @click="changePage(currentPage - 1)" class="btn btn-outline-warning" type="button" title="`Go to page ${currentPage - 1}`" :disabled="currentPage == 1"><em>Previous</em></button>
           <span>Page <b>{{ currentPage }}</b> of <b>{{ totalPages }}</b></span>
           <button @click="changePage(currentPage + 1)" class="btn btn-outline-warning"><em>Next</em></button>
 
